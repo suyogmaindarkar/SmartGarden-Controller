@@ -188,11 +188,6 @@ It aims to reduce water wastage and human effort in agriculture or gardening.
 
 ---
 
-##  Screenshots
-
-> *(Add images of the hardware setup, Blynk app dashboard, and working device here)*
-
----
 
 
 ## License
