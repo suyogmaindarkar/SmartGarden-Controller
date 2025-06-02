@@ -1,16 +1,16 @@
 
-📄 instruction.txt  
-🛠️ Project: Smart Plant Monitoring & Irrigation System using ESP32 + Blynk + DHT22 + Soil Moisture Sensor + LCD + Relay
+## instruction
+Project: Smart Plant Monitoring & Irrigation System using ESP32 + Blynk + DHT22 + Soil Moisture Sensor + LCD + Relay
 
 ---
 
-### 🔧 Project Overview:
+### Project Overview:
 
 This Smart Plant Monitoring and Irrigation System automates water pumping based on soil moisture levels and provides real-time environmental monitoring using an ESP32, DHT22 sensor, and Blynk IoT platform. It displays temperature, humidity, soil moisture, and pump status on a 16x2 I2C LCD and the Blynk dashboard. Users can switch between auto and manual irrigation modes remotely via Blynk.
 
 ---
 
-### 📦 Components Required:
+###  Components Required:
 
 - ESP32 DevKit V1
 - Soil Moisture Sensor (Analog)
@@ -25,7 +25,7 @@ This Smart Plant Monitoring and Irrigation System automates water pumping based 
 
 ---
 
-### 🔌 Pin Connections:
+### Pin Connections:
 
 | Component         | ESP32 Pin | Notes                        |
 |------------------|-----------|------------------------------|
@@ -39,7 +39,7 @@ This Smart Plant Monitoring and Irrigation System automates water pumping based 
 
 ---
 
-### 💻 Arduino Code Setup:
+### Arduino Code Setup:
 
 1. Install these libraries in Arduino IDE:
    - `Blynk` (v1)
@@ -62,7 +62,7 @@ char pass[] = "YourWiFiPassword";
 
 ---
 
-### 📱 Blynk Dashboard Setup (Blynk IoT - new version):
+###  Blynk Dashboard Setup (Blynk IoT - new version):
 
 1. Go to [Blynk IoT](https://blynk.cloud/dashboard/)
 2. Create a new Template:
@@ -88,7 +88,7 @@ char pass[] = "YourWiFiPassword";
 
 ---
 
-### 🔍 Working Principle:
+###  Working Principle:
 
 - Reads temperature and humidity from the DHT22 sensor.
 - Reads soil moisture level from the analog soil sensor.
@@ -100,7 +100,7 @@ char pass[] = "YourWiFiPassword";
 
 ---
 
-### ⚙️ Code Explanation Highlights:
+###  Code Explanation Highlights:
 
 - `analogRead(SOIL_PIN)` reads soil sensor value.
 - `map()` converts analog reading to % (0 to 100).
@@ -110,7 +110,7 @@ char pass[] = "YourWiFiPassword";
 
 ---
 
-### 🔗 Helpful Tips:
+###  Helpful Tips:
 
 - Use separate power for motor/pump to avoid ESP32 resets.
 - Always connect all GNDs together (ESP32, pump, sensors).
@@ -119,7 +119,7 @@ char pass[] = "YourWiFiPassword";
 
 ---
 
-### 🧪 Testing:
+### Testing:
 
 1. Power on the ESP32.
 2. Open Serial Monitor to debug readings.
@@ -129,7 +129,7 @@ char pass[] = "YourWiFiPassword";
 
 ---
 
-### ✅ Final Checklist:
+###  Final Checklist:
 
 - [x] Code uploaded and working
 - [x] Blynk dashboard configured
@@ -139,6 +139,6 @@ char pass[] = "YourWiFiPassword";
 
 ---
 
-### 📝 License:
+### License:
 
 This project is released under the [MIT License](LICENSE). You are free to use, modify, and distribute with attribution.
