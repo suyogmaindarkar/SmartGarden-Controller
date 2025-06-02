@@ -1,10 +1,10 @@
-# 🌿 Smart Irrigation System using ESP32 and Blynk IoT
+# Smart Irrigation System using ESP32 and Blynk IoT
 
 An intelligent and fully automated irrigation system built with the **ESP32**, **DHT22**, and **Soil Moisture Sensor** to monitor real-time environmental data and control a water pump accordingly. This project combines **IoT**, **embedded systems**, and **cloud monitoring** to create an efficient solution for sustainable agriculture and home gardening.
 
 ---
 
-## 📘 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
@@ -24,7 +24,7 @@ An intelligent and fully automated irrigation system built with the **ESP32**, *
 
 ---
 
-## 🧩 Overview
+## Overview
 
 The **Smart Irrigation System** helps automate the watering process by:
 
@@ -37,18 +37,18 @@ It aims to reduce water wastage and human effort in agriculture or gardening.
 
 ---
 
-## ✨ Features
+## Features
 
-- ✅ Automatic pump control based on soil moisture level
-- 📲 Manual pump control via Blynk IoT app
-- 🌡️ Temperature and humidity measurement using DHT22
-- 🧠 Real-time data logging and visualization
-- 💡 LCD display for on-device monitoring
-- 🔒 Fail-safe logic to prevent false pump triggers
+- Automatic pump control based on soil moisture level
+- Manual pump control via Blynk IoT app
+- Temperature and humidity measurement using DHT22
+- Real-time data logging and visualization
+- LCD display for on-device monitoring
+- Fail-safe logic to prevent false pump triggers
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```text
        +------------+       WiFi       +---------+
@@ -64,7 +64,7 @@ It aims to reduce water wastage and human effort in agriculture or gardening.
 
 ---
 
-## 📦 Bill of Materials
+## Bill of Materials
 
 | Component                | Quantity | Notes                          |
 |--------------------------|----------|--------------------------------|
@@ -80,7 +80,7 @@ It aims to reduce water wastage and human effort in agriculture or gardening.
 
 ---
 
-## ⚡ Circuit Diagram
+## Circuit Diagram
 
 > *(Insert Fritzing image or schematic diagram here)*
 
@@ -98,7 +98,7 @@ It aims to reduce water wastage and human effort in agriculture or gardening.
 
 ---
 
-## 🧠 Working Principle
+## Working Principle
 
 - The soil sensor reads moisture levels.
 - If moisture < threshold (e.g., 40%), pump is automatically activated.
@@ -108,7 +108,7 @@ It aims to reduce water wastage and human effort in agriculture or gardening.
 
 ---
 
-## 💻 Software Requirements
+## Software Requirements
 
 - Arduino IDE 1.8.19 or newer
 - ESP32 Board Package
@@ -118,7 +118,7 @@ It aims to reduce water wastage and human effort in agriculture or gardening.
 
 ---
 
-## 🧪 Installation & Setup
+## Installation & Setup
 
 1. **Clone the Repository**
    ```bash
@@ -148,7 +148,7 @@ It aims to reduce water wastage and human effort in agriculture or gardening.
 
 ---
 
-## 📱 Blynk App Setup
+## Blynk App Setup
 
 1. Install Blynk from the [Play Store](https://play.google.com/store/apps/details?id=cc.blynk) or [App Store](https://apps.apple.com/).
 2. Create a new template:
@@ -163,7 +163,7 @@ It aims to reduce water wastage and human effort in agriculture or gardening.
 
 ---
 
-## 📜 Code Explanation Highlights
+##  Code Explanation Highlights
 
 - **Relay Logic**: Active LOW
 - **Sensor Mapping**:
@@ -178,7 +178,7 @@ It aims to reduce water wastage and human effort in agriculture or gardening.
 
 ---
 
-## 🚀 Future Scope
+## Future Scope
 
 - Add water level monitoring
 - Introduce MQTT for scalable IoT integration
@@ -188,24 +188,24 @@ It aims to reduce water wastage and human effort in agriculture or gardening.
 
 ---
 
-## 🖼️ Screenshots
+##  Screenshots
 
 > *(Add images of the hardware setup, Blynk app dashboard, and working device here)*
 
 ---
 
-## 🪪 License
 
-This project is licensed under the **MIT License**.  
-Feel free to use, modify, and distribute this work with attribution.
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 
 ---
 
-## 📬 Contact
+##  Contact
 
-- **Developer**: Your Name  
-- **Email**: [youremail@example.com](mailto:youremail@example.com)  
-- **GitHub**: [github.com/yourusername](https://github.com/yourusername)
+- **Developer**: Suyog Maindarkar
+- **Email**: suyogmaindarkar@gmail.com
+- **GitHub**:https://github.com/suyogmaindarkar
 
 ---
 
