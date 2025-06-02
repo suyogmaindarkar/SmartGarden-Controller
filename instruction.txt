@@ -1,0 +1,144 @@
+
+📄 instruction.txt  
+🛠️ Project: Smart Plant Monitoring & Irrigation System using ESP32 + Blynk + DHT22 + Soil Moisture Sensor + LCD + Relay
+
+---
+
+### 🔧 Project Overview:
+
+This Smart Plant Monitoring and Irrigation System automates water pumping based on soil moisture levels and provides real-time environmental monitoring using an ESP32, DHT22 sensor, and Blynk IoT platform. It displays temperature, humidity, soil moisture, and pump status on a 16x2 I2C LCD and the Blynk dashboard. Users can switch between auto and manual irrigation modes remotely via Blynk.
+
+---
+
+### 📦 Components Required:
+
+- ESP32 DevKit V1
+- Soil Moisture Sensor (Analog)
+- DHT22 Temperature and Humidity Sensor
+- 1-Channel Relay Module
+- 16x2 LCD with I2C Interface
+- Jumper Wires
+- Breadboard or PCB
+- USB Cable for ESP32
+- Water Pump (5V–12V)
+- Power Supply or Battery (for pump)
+
+---
+
+### 🔌 Pin Connections:
+
+| Component         | ESP32 Pin | Notes                        |
+|------------------|-----------|------------------------------|
+| Soil Sensor (A0)  | GPIO34    | Analog input only            |
+| DHT22 Data        | GPIO4     | Use external pull-up resistor (10kΩ) if needed |
+| Relay IN          | GPIO26    | Active LOW logic             |
+| LCD SDA           | GPIO21    | I2C Data                     |
+| LCD SCL           | GPIO22    | I2C Clock                    |
+| VCC Components    | 3.3V/5V   | Match sensor/pump voltage    |
+| GND Components    | GND       | Common ground                |
+
+---
+
+### 💻 Arduino Code Setup:
+
+1. Install these libraries in Arduino IDE:
+   - `Blynk` (v1)
+   - `DHT sensor library` by Adafruit
+   - `Adafruit Unified Sensor`
+   - `LiquidCrystal_I2C` or compatible
+
+2. Set Wi-Fi and Blynk credentials in the code:
+```cpp
+char ssid[] = "YourWiFiName";
+char pass[] = "YourWiFiPassword";
+#define BLYNK_AUTH_TOKEN "Your_Blynk_Token"
+```
+
+3. Upload the code using the ESP32 Dev Board settings:
+   - Board: ESP32 Dev Module
+   - Flash Mode: QIO
+   - Partition Scheme: Default
+   - Upload Speed: 115200
+
+---
+
+### 📱 Blynk Dashboard Setup (Blynk IoT - new version):
+
+1. Go to [Blynk IoT](https://blynk.cloud/dashboard/)
+2. Create a new Template:
+   - Template Name: `Smart Irrigation`
+   - Hardware: ESP32 Dev Board
+   - Connection Type: WiFi
+
+3. Add Data Streams:
+   - V0 → Soil Moisture (Integer)
+   - V1 → Temperature (Float)
+   - V2 → Humidity (Float)
+   - V3 → Manual Pump Switch (Boolean)
+
+4. Add Widgets to Web or Mobile Dashboard:
+   - **Gauge** → V0 (Label: Soil %)
+   - **Gauge** → V1 (Label: Temperature °C)
+   - **Gauge** → V2 (Label: Humidity %)
+   - **Switch** → V3 (Manual Control)
+
+5. Link Template to a Device with your Auth Token.
+
+6. Download Blynk App (Android/iOS) and log in using the same account. Your device dashboard will appear automatically.
+
+---
+
+### 🔍 Working Principle:
+
+- Reads temperature and humidity from the DHT22 sensor.
+- Reads soil moisture level from the analog soil sensor.
+- Automatically turns ON the pump if soil moisture is below 40%.
+- Allows manual override of pump using Blynk Switch (V3).
+- Displays all values on LCD:
+  - Line 1: Temperature, Humidity
+  - Line 2: Soil Moisture %, Pump Mode
+
+---
+
+### ⚙️ Code Explanation Highlights:
+
+- `analogRead(SOIL_PIN)` reads soil sensor value.
+- `map()` converts analog reading to % (0 to 100).
+- Auto mode activates relay if soil < threshold and manual is off.
+- `digitalWrite(RELAY_PIN, LOW)` turns pump ON (Active LOW).
+- `Blynk.virtualWrite()` sends data to the dashboard.
+
+---
+
+### 🔗 Helpful Tips:
+
+- Use separate power for motor/pump to avoid ESP32 resets.
+- Always connect all GNDs together (ESP32, pump, sensors).
+- Tune soil moisture thresholds based on your sensor response.
+- Keep DHT22 protected from direct water/moisture.
+
+---
+
+### 🧪 Testing:
+
+1. Power on the ESP32.
+2. Open Serial Monitor to debug readings.
+3. Watch values on LCD and Blynk.
+4. Try placing the soil sensor in dry vs. wet soil.
+5. Use Blynk Switch to toggle manual control.
+
+---
+
+### ✅ Final Checklist:
+
+- [x] Code uploaded and working
+- [x] Blynk dashboard configured
+- [x] LCD showing real-time data
+- [x] Relay switches based on soil moisture
+- [x] Manual override functional
+
+---
+
+### 📝 License:
+
+This project is released under the [MIT License](LICENSE). You are free to use, modify, and distribute with attribution.
